@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DishRecipesDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Calories" Type="Int32" />
+    <NavigationProperty Name="ingredientsInRecipes" Relationship="Self.FK_ingredientsInRecipes_Ingredients" FromRole="Ingredients" ToRole="ingredientsInRecipes" />
+  </EntityType>
+  <EntityType Name="ingredientsInRecipe">
+    <Key>
+      <PropertyRef Name="RecipeID" />
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="RecipeID" Type="Int32" Nullable="false" />
+    <Property Name="IngredientID" Type="Int32" Nullable="false" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Ingredient" Relationship="Self.FK_ingredientsInRecipes_Ingredients" FromRole="ingredientsInRecipes" ToRole="Ingredients" />
+    <NavigationProperty Name="recipe" Relationship="Self.FK_ingredientsInRecipes_recipes" FromRole="ingredientsInRecipes" ToRole="recipes" />
+  </EntityType>
+  <EntityType Name="recipe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CookingMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="time" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ingredientsInRecipes" Relationship="Self.FK_ingredientsInRecipes_recipes" FromRole="recipes" ToRole="ingredientsInRecipes" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_ingredientsInRecipes_Ingredients">
+    <End Role="Ingredients" Type="Self.Ingredient" Multiplicity="1" />
+    <End Role="ingredientsInRecipes" Type="Self.ingredientsInRecipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ingredientsInRecipes">
+        <PropertyRef Name="IngredientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ingredientsInRecipes_recipes">
+    <End Role="recipes" Type="Self.recipe" Multiplicity="1" />
+    <End Role="ingredientsInRecipes" Type="Self.ingredientsInRecipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ingredientsInRecipes">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DishRecipesDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+    <EntitySet Name="ingredientsInRecipes" EntityType="Self.ingredientsInRecipe" />
+    <EntitySet Name="recipes" EntityType="Self.recipe" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_ingredientsInRecipes_Ingredients" Association="Self.FK_ingredientsInRecipes_Ingredients">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="ingredientsInRecipes" EntitySet="ingredientsInRecipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ingredientsInRecipes_recipes" Association="Self.FK_ingredientsInRecipes_recipes">
+      <End Role="recipes" EntitySet="recipes" />
+      <End Role="ingredientsInRecipes" EntitySet="ingredientsInRecipes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

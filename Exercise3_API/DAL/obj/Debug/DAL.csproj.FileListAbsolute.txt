@@ -1,0 +1,24 @@
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\DAL.dll.config
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\DAL.dll
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\DAL.pdb
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\EntityFramework.dll
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\EntityFramework.xml
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\obj\Debug\DAL.dll
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\obj\Debug\DAL.pdb
+C:\Users\vmage\OneDrive\Ruppin\שנה ג\פיתוח אפליקציות\EX3\Exercise3_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\DAL.dll.config
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\DAL.dll
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\DAL.pdb
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\EntityFramework.dll
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\EntityFramework.xml
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\obj\Debug\DAL.dll
+C:\Users\ronny\OneDrive\שולחן העבודה\task3\Exercise3_API\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DishRecipesDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ingredients">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Calories" Type="int" />
+  </EntityType>
+  <EntityType Name="ingredientsInRecipes">
+    <Key>
+      <PropertyRef Name="RecipeID" />
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="RecipeID" Type="int" Nullable="false" />
+    <Property Name="IngredientID" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" />
+  </EntityType>
+  <EntityType Name="recipes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CookingMethod" Type="nvarchar(max)" />
+    <Property Name="time" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_ingredientsInRecipes_Ingredients">
+    <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="1" />
+    <End Role="ingredientsInRecipes" Type="Self.ingredientsInRecipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ingredientsInRecipes">
+        <PropertyRef Name="IngredientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ingredientsInRecipes_recipes">
+    <End Role="recipes" Type="Self.recipes" Multiplicity="1" />
+    <End Role="ingredientsInRecipes" Type="Self.ingredientsInRecipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ingredientsInRecipes">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DishRecipesDBStoreContainer">
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ingredientsInRecipes" EntityType="Self.ingredientsInRecipes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="recipes" EntityType="Self.recipes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ingredientsInRecipes_Ingredients" Association="Self.FK_ingredientsInRecipes_Ingredients">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="ingredientsInRecipes" EntitySet="ingredientsInRecipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ingredientsInRecipes_recipes" Association="Self.FK_ingredientsInRecipes_recipes">
+      <End Role="recipes" EntitySet="recipes" />
+      <End Role="ingredientsInRecipes" EntitySet="ingredientsInRecipes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
