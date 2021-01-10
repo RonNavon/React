@@ -1,0 +1,126 @@
+.App{
+  text-align: center;
+  font-family:'SimSun';
+  font-size: small;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: 200px;
+}
+
+@media (min-width: 768px) and (max-width: 1900px) {
+  
+  .recipesDiv{
+      display: grid;
+      grid-template-columns:  300px 300px 300px;
+      padding: 2%;
+      gap:10px;
+      justify-content: center;
+  }
+  
+  .addForms{
+    display: grid;
+    padding: 2%;
+    gap:10px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .recipesDiv{
+      display: grid;
+      grid-template-columns:  300px 300px;
+      padding: 2%;
+      gap:10px;
+      justify-content: center;
+  }
+  
+  .addForms{
+    display: grid;
+    padding: 2%;
+    gap:10px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    
+  .recipesDiv{
+      display: grid;
+      grid-template-columns:  300px;
+      padding: 2%;
+      gap:10px;
+      justify-content: center;
+  }
+  
+}
+
+.card{
+  font-size: small;
+}
+
+
+.ingredientImg {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: 100px;
+}
+
+.optionListContainer{
+  color:black
+}
+
+.ingredientCard{
+  gap:10px;
+  vertical-align: middle;
+  border-style: none;
+  width: 350px;
+  height: 40px;
+  padding: 100px;
+
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+  overflow: scroll;
+  height: 350px;
+  display: grid;
+  justify-content: center;
+
+}
